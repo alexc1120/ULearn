@@ -31,3 +31,15 @@ C:\Repository\ContentManagmentSystem\ContentManagmentSystem.Test\bin\Debug\Syste
 C:\Repository\ContentManagmentSystem\ContentManagmentSystem.Test\obj\Debug\ContentManagmentSystem.Test.csprojResolveAssemblyReference.cache
 C:\Repository\ContentManagmentSystem\ContentManagmentSystem.Test\obj\Debug\ContentManagmentSystem.Test.dll
 C:\Repository\ContentManagmentSystem\ContentManagmentSystem.Test\obj\Debug\ContentManagmentSystem.Test.pdb
+C:\Repository\Ulearn\ContentManagmentSystem.Test\bin\Debug\ContentManagmentSystem.Test.dll.config
+C:\Repository\Ulearn\ContentManagmentSystem.Test\bin\Debug\ContentManagmentSystem.Test.dll
+C:\Repository\Ulearn\ContentManagmentSystem.Test\bin\Debug\ContentManagmentSystem.Test.pdb
+C:\Repository\Ulearn\ContentManagmentSystem.Test\bin\Debug\EntityFramework.dll
+C:\Repository\Ulearn\ContentManagmentSystem.Test\bin\Debug\EntityFramework.SqlServer.dll
+C:\Repository\Ulearn\ContentManagmentSystem.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Repository\Ulearn\ContentManagmentSystem.Test\bin\Debug\uLearnLibrary.dll
+C:\Repository\Ulearn\ContentManagmentSystem.Test\bin\Debug\EntityFramework.xml
+C:\Repository\Ulearn\ContentManagmentSystem.Test\bin\Debug\EntityFramework.SqlServer.xml
+C:\Repository\Ulearn\ContentManagmentSystem.Test\obj\Debug\ContentManagmentSystem.Test.csprojResolveAssemblyReference.cache
+C:\Repository\Ulearn\ContentManagmentSystem.Test\obj\Debug\ContentManagmentSystem.Test.dll
+C:\Repository\Ulearn\ContentManagmentSystem.Test\obj\Debug\ContentManagmentSystem.Test.pdb
