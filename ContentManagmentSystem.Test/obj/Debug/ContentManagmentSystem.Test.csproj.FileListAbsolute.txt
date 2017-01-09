@@ -37,9 +37,14 @@ C:\Repository\Ulearn\ContentManagmentSystem.Test\bin\Debug\ContentManagmentSyste
 C:\Repository\Ulearn\ContentManagmentSystem.Test\bin\Debug\EntityFramework.dll
 C:\Repository\Ulearn\ContentManagmentSystem.Test\bin\Debug\EntityFramework.SqlServer.dll
 C:\Repository\Ulearn\ContentManagmentSystem.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
-C:\Repository\Ulearn\ContentManagmentSystem.Test\bin\Debug\uLearnLibrary.dll
 C:\Repository\Ulearn\ContentManagmentSystem.Test\bin\Debug\EntityFramework.xml
 C:\Repository\Ulearn\ContentManagmentSystem.Test\bin\Debug\EntityFramework.SqlServer.xml
-C:\Repository\Ulearn\ContentManagmentSystem.Test\obj\Debug\ContentManagmentSystem.Test.csprojResolveAssemblyReference.cache
 C:\Repository\Ulearn\ContentManagmentSystem.Test\obj\Debug\ContentManagmentSystem.Test.dll
 C:\Repository\Ulearn\ContentManagmentSystem.Test\obj\Debug\ContentManagmentSystem.Test.pdb
+C:\Repository\Ulearn\ContentManagmentSystem.Test\bin\Debug\uLearnLibrary.dll
+C:\Repository\Ulearn\ContentManagmentSystem.Test\obj\Debug\ContentManagmentSystem.Test.csprojResolveAssemblyReference.cache
+C:\Repository\Ulearn\ContentManagmentSystem.Test\bin\Debug\Microsoft.SqlServer.ConnectionInfo.dll
+C:\Repository\Ulearn\ContentManagmentSystem.Test\bin\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.dll
+C:\Repository\Ulearn\ContentManagmentSystem.Test\bin\Debug\Microsoft.SqlServer.Smo.dll
+C:\Repository\Ulearn\ContentManagmentSystem.Test\bin\Debug\System.Data.Common.dll
+C:\Repository\Ulearn\ContentManagmentSystem.Test\bin\Debug\System.Data.SqlClient.dll

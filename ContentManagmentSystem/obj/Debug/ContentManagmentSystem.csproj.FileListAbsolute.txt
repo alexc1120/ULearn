@@ -94,3 +94,8 @@ C:\Repository\Ulearn\ContentManagmentSystem\bin\System.Web.Mvc.xml
 C:\Repository\Ulearn\ContentManagmentSystem\obj\Debug\ContentManagmentSystem.csprojResolveAssemblyReference.cache
 C:\Repository\Ulearn\ContentManagmentSystem\obj\Debug\ContentManagmentSystem.dll
 C:\Repository\Ulearn\ContentManagmentSystem\obj\Debug\ContentManagmentSystem.pdb
+C:\Repository\Ulearn\ContentManagmentSystem\bin\System.Data.Common.dll
+C:\Repository\Ulearn\ContentManagmentSystem\bin\System.Data.SqlClient.dll
+C:\Repository\Ulearn\ContentManagmentSystem\bin\Microsoft.SqlServer.ConnectionInfo.dll
+C:\Repository\Ulearn\ContentManagmentSystem\bin\Microsoft.SqlServer.Management.Sdk.Sfc.dll
+C:\Repository\Ulearn\ContentManagmentSystem\bin\Microsoft.SqlServer.Smo.dll
