@@ -53,11 +53,18 @@ namespace ContentManagmentSystem.Test
         }
 
         [TestMethod]
-       /// [ExpectedException(typeof(ArgumentException))]
+        [ExpectedException(typeof(ArgumentException))]
         public void UpdateUserPassword()
         {
             UserManagement um = new UserManagement();
-            um.UpdateUserPassword("ssins0", "ssimmons0");
+            um.UpdateUserPassword("ssimmons0", "ssimmons0");
+        }
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void UpdateUserPasswordShortLength()
+        {
+            UserManagement um = new UserManagement();
+            um.UpdateUserPassword("ssimmons0", "ss0");
         }
 
         [TestCleanup]

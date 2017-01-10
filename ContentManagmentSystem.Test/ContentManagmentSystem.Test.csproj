@@ -68,7 +68,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="uLearnLibrary">
-      <HintPath>..\uLearnLibrary.dll</HintPath>
+      <HintPath>..\..\..\Users\alex_\Desktop\uLearnLibrary\bin\Debug\uLearnLibrary.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Choose>

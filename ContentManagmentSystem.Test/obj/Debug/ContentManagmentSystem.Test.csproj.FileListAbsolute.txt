@@ -48,3 +48,4 @@ C:\Repository\Ulearn\ContentManagmentSystem.Test\bin\Debug\Microsoft.SqlServer.M
 C:\Repository\Ulearn\ContentManagmentSystem.Test\bin\Debug\Microsoft.SqlServer.Smo.dll
 C:\Repository\Ulearn\ContentManagmentSystem.Test\bin\Debug\System.Data.Common.dll
 C:\Repository\Ulearn\ContentManagmentSystem.Test\bin\Debug\System.Data.SqlClient.dll
+C:\Repository\Ulearn\ContentManagmentSystem.Test\bin\Debug\uLearnLibrary.pdb
