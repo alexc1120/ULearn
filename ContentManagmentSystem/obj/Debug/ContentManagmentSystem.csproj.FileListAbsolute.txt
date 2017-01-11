@@ -70,7 +70,12 @@ C:\Repository\Ulearn\ContentManagmentSystem\bin\Microsoft.AI.Web.dll
 C:\Repository\Ulearn\ContentManagmentSystem\bin\Microsoft.AI.WindowsServer.dll
 C:\Repository\Ulearn\ContentManagmentSystem\bin\Microsoft.ApplicationInsights.dll
 C:\Repository\Ulearn\ContentManagmentSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Repository\Ulearn\ContentManagmentSystem\bin\Microsoft.SqlServer.ConnectionInfo.dll
+C:\Repository\Ulearn\ContentManagmentSystem\bin\Microsoft.SqlServer.Management.Sdk.Sfc.dll
+C:\Repository\Ulearn\ContentManagmentSystem\bin\Microsoft.SqlServer.Smo.dll
 C:\Repository\Ulearn\ContentManagmentSystem\bin\Microsoft.Web.Infrastructure.dll
+C:\Repository\Ulearn\ContentManagmentSystem\bin\System.Data.Common.dll
+C:\Repository\Ulearn\ContentManagmentSystem\bin\System.Data.SqlClient.dll
 C:\Repository\Ulearn\ContentManagmentSystem\bin\System.Web.Helpers.dll
 C:\Repository\Ulearn\ContentManagmentSystem\bin\System.Web.Mvc.dll
 C:\Repository\Ulearn\ContentManagmentSystem\bin\System.Web.Razor.dll
@@ -91,11 +96,6 @@ C:\Repository\Ulearn\ContentManagmentSystem\bin\System.Web.Webpages.Deployment.x
 C:\Repository\Ulearn\ContentManagmentSystem\bin\System.Web.Webpages.Razor.xml
 C:\Repository\Ulearn\ContentManagmentSystem\bin\System.Web.Helpers.xml
 C:\Repository\Ulearn\ContentManagmentSystem\bin\System.Web.Mvc.xml
-C:\Repository\Ulearn\ContentManagmentSystem\obj\Debug\ContentManagmentSystem.csprojResolveAssemblyReference.cache
 C:\Repository\Ulearn\ContentManagmentSystem\obj\Debug\ContentManagmentSystem.dll
 C:\Repository\Ulearn\ContentManagmentSystem\obj\Debug\ContentManagmentSystem.pdb
-C:\Repository\Ulearn\ContentManagmentSystem\bin\System.Data.Common.dll
-C:\Repository\Ulearn\ContentManagmentSystem\bin\System.Data.SqlClient.dll
-C:\Repository\Ulearn\ContentManagmentSystem\bin\Microsoft.SqlServer.ConnectionInfo.dll
-C:\Repository\Ulearn\ContentManagmentSystem\bin\Microsoft.SqlServer.Management.Sdk.Sfc.dll
-C:\Repository\Ulearn\ContentManagmentSystem\bin\Microsoft.SqlServer.Smo.dll
+C:\Repository\Ulearn\ContentManagmentSystem\obj\Debug\ContentManagmentSystem.csprojResolveAssemblyReference.cache

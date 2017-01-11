@@ -85,7 +85,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="SQLManager.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="Section9UnitTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
