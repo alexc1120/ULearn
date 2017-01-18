@@ -3,14 +3,14 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using uLearnLibrary;
 using System.Data;
 using System.Linq;
-
+using System.Data.SqlClient;
 
 namespace ContentManagmentSystem.Test
 {
+
     [TestClass]
     public class Section9UnitTests
     {
-        SQLManager sqlManager = new SQLManager();
 
         [TestMethod]
         public void AuthenticateUserCorrectCredentials()
@@ -48,8 +48,26 @@ namespace ContentManagmentSystem.Test
         public void AddNewUser()
         {
             UserManagement um = new UserManagement();
-            var user = um.AddNewUser("nikola", "nik@a.a", "123456", "Learner");
-            Assert.IsNotNull(user);
+            SqlDataAdapter adapter = new SqlDataAdapter("Select * FROM Users",
+                SQLManager.connectionString);
+
+            DataTable dtOriginal = new DataTable();
+            adapter.Fill(dtOriginal);
+
+            DataRow newRow = dtOriginal.NewRow();
+
+            newRow["Username"] = "nikola";
+            newRow["Email"] = "nik@a.a";
+            newRow["Password"] = "123456";
+            newRow["UserRole"] = 2;
+
+            var user = um.AddNewUser("nikola", "nik@a.a", "123456", "Material Developer");
+            newRow["Id"] = user;
+            dtOriginal.Rows.Add(newRow);
+
+            DataTable dtActual = new DataTable();
+            adapter.Fill(dtActual);
+            Assert.IsTrue(dtOriginal.IsEqual(dtActual));
         }
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
@@ -93,20 +111,19 @@ namespace ContentManagmentSystem.Test
 
             string username = "ssimmons0";
 
-            string oldPass = sqlManager.GetPasswordByUser(username);
+            string oldPass = SQLManager.GetPasswordByUser(username);
 
             UserManagement um = new UserManagement();
             um.UpdateUserPassword(username, "123456");
 
-            string newPass = sqlManager.GetPasswordByUser(username);
+            string newPass = SQLManager.GetPasswordByUser(username);
 
             Assert.AreNotEqual(oldPass, newPass);
         }
 
         [TestCleanup]
         public void Finalise() {
-            SQLManager sqlManager = new SQLManager();
-            sqlManager.ResetDatabase();
+            SQLManager.ResetDatabase();
         }
 
 

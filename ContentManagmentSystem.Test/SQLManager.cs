@@ -3,15 +3,13 @@ using System.IO;
 
 namespace ContentManagmentSystem
 {
-    public class SQLManager
+    public static class SQLManager
     {
-        string connectionString;
-        public SQLManager() {
-            connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString;
-
-        }
-
-        public void ResetDatabase()
+        public static string connectionString =
+            System.Configuration.ConfigurationManager
+            .ConnectionStrings["DBConnection"].ConnectionString;
+        
+        public static void ResetDatabase()
         {
             FileInfo file = new FileInfo("../../Scripts/Users.sql");
             string script = file.OpenText().ReadToEnd();
@@ -26,7 +24,7 @@ namespace ContentManagmentSystem
             cmd.ExecuteNonQuery();
             cnn.Close();
          }
-        public string GetPasswordByUser(string username) {
+        public static string GetPasswordByUser(string username) {
 
             string passwordFound = "";
             SqlConnection conn = new SqlConnection(connectionString);

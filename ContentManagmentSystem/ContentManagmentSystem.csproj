@@ -120,9 +120,6 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="uLearnLibrary">
-      <HintPath>..\..\..\Users\alex_\Desktop\uLearnLibrary.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Web.Razor">
@@ -152,20 +149,18 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AnonymousGuest.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Learners.cs" />
-    <Compile Include="MaterialDevelopers.cs" />
-    <Compile Include="Models\AJAXContentImplemntation.cs" />
+    <Compile Include="Models\AJAXContentImplementation.cs" />
     <Compile Include="Models\ContentFactory.cs" />
     <Compile Include="Models\ContentImplementation.cs" />
     <Compile Include="Models\IAbstractFactory.cs" />
     <Compile Include="Models\IAJAXContent.cs" />
     <Compile Include="Models\IContent.cs" />
+    <Compile Include="Models\ISeasonalContent.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
