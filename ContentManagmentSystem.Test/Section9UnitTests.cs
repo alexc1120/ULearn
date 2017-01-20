@@ -41,8 +41,7 @@ namespace ContentManagmentSystem.Test
         {
             string userRole = "";
             UserManagement um = new UserManagement();
-            userRole = um.GetRoleByUsername("nikola");
-            
+            userRole = um.GetRoleByUsername("nikola");            
         }
         [TestMethod]
         public void AddNewUser()
@@ -73,22 +72,101 @@ namespace ContentManagmentSystem.Test
         [ExpectedException(typeof(ArgumentException))]
         public void AddNewUserShortPassword()
         {
-            UserManagement um = new UserManagement();
-            var user = um.AddNewUser("nikola", "nik@a.a", "123", "Learner");
+            DataTable dtOriginal = null;
+            DataTable dtActual = null;
+            try
+            {
+                UserManagement um = new UserManagement();
+                SqlDataAdapter adapter = new SqlDataAdapter("Select * FROM Users",
+                    SQLManager.connectionString);
+
+                dtOriginal = new DataTable();
+                adapter.Fill(dtOriginal);
+
+                DataRow newRow = dtOriginal.NewRow();
+
+                newRow["Username"] = "nikola";
+                newRow["Email"] = "nik@a.a";
+                newRow["Password"] = "123";
+                newRow["UserRole"] = 1;
+                var user = um.AddNewUser("nikola", "nik@a.a", "123", "Learner");
+                newRow["Id"] = user;
+                dtOriginal.Rows.Add(newRow);
+
+                dtActual = new DataTable();
+                adapter.Fill(dtActual);
+            }
+            finally
+            {
+                Assert.IsFalse(dtOriginal.IsEqual(dtActual));
+            }
+            
         }
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void AddNewUserIncorrectEmail()
         {
             UserManagement um = new UserManagement();
-            var user = um.AddNewUser("nikola", "nik.a", "123456", "Learner");
+            DataTable dtOriginal = null;
+            DataTable dtActual = null;
+            try
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter("Select * FROM Users",
+                    SQLManager.connectionString);
+
+                dtOriginal = new DataTable();
+                adapter.Fill(dtOriginal);
+
+                DataRow newRow = dtOriginal.NewRow();
+
+                newRow["Username"] = "nikola";
+                newRow["Email"] = "nik.a";
+                newRow["Password"] = "123";
+                newRow["UserRole"] = 1;
+                var user = um.AddNewUser("nikola", "nik.a", "123456", "Learner");
+                newRow["Id"] = user;
+                dtOriginal.Rows.Add(newRow);
+
+                dtActual = new DataTable();
+                adapter.Fill(dtActual);
+            }
+            finally
+            {
+                Assert.IsFalse(dtOriginal.IsEqual(dtActual));
+            }
         }
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void AddNewUserExistingEmail()
         {
             UserManagement um = new UserManagement();
-            var user = um.AddNewUser("nikola", "wjacobs0@nhs.uk", "123456", "Learner");
+            DataTable dtOriginal = null;
+            DataTable dtActual = null;
+            try
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter("Select * FROM Users",
+                    SQLManager.connectionString);
+
+                dtOriginal = new DataTable();
+                adapter.Fill(dtOriginal);
+
+                DataRow newRow = dtOriginal.NewRow();
+
+                newRow["Username"] = "nikola";
+                newRow["Email"] = "wjacobs0@nhs.uk";
+                newRow["Password"] = "123456";
+                newRow["UserRole"] = 1;
+                var user = um.AddNewUser("nikola", "wjacobs0@nhs.uk", "123456", "Learner");
+                newRow["Id"] = user;
+                dtOriginal.Rows.Add(newRow);
+
+                dtActual = new DataTable();
+                adapter.Fill(dtActual);
+            }
+            finally
+            {
+                Assert.IsFalse(dtOriginal.IsEqual(dtActual));
+            }
         }
 
         [TestMethod]
@@ -96,14 +174,33 @@ namespace ContentManagmentSystem.Test
         public void UpdateUserPasswordShortLength()
         {
             UserManagement um = new UserManagement();
-            um.UpdateUserPassword("ssimmons0", "ss0");
+            string username = "ssimmons0";
+            try
+            {
+                um.UpdateUserPassword("ssimmons0", "ss0");
+            }
+            finally
+            {
+                string userPass = SQLManager.GetPasswordByUser(username);
+                Assert.AreNotEqual("ss0", userPass);
+            }
         }
         [TestMethod]
         [ExpectedException(typeof(UserNotFoundException))]
         public void UpdateUserPasswordUnavailableUser()
         {
             UserManagement um = new UserManagement();
-            um.UpdateUserPassword("ssimmons0123", "ss0123312");
+            string username = "ssimmons0123";
+            string email = "wjacobs0@nhs.uk";
+            try
+            {
+                um.UpdateUserPassword(username, "ss0123312");
+            }
+            finally {
+                var currentUserPass = SQLManager.GetPasswordFromEmail(email);
+
+                Assert.AreNotEqual(currentUserPass, "ss0123312");
+            }
         }
         [TestMethod]
         public void UpdateUserPasswordCorrectLength()
@@ -111,14 +208,11 @@ namespace ContentManagmentSystem.Test
 
             string username = "ssimmons0";
 
-            string oldPass = SQLManager.GetPasswordByUser(username);
-
             UserManagement um = new UserManagement();
             um.UpdateUserPassword(username, "123456");
 
             string newPass = SQLManager.GetPasswordByUser(username);
-
-            Assert.AreNotEqual(oldPass, newPass);
+            Assert.AreEqual(newPass, "123456");
         }
 
         [TestCleanup]

@@ -41,6 +41,25 @@ namespace ContentManagmentSystem
             }
             return passwordFound;
         }
+        public static string GetPasswordFromEmail(string email)
+        {
+
+            string passwordFound = "";
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+
+            SqlCommand command = new SqlCommand("SELECT [Password] FROM Users WHERE Email=@Email;", conn);
+            command.Parameters.AddWithValue("@Email", email);
+            // int result = command.ExecuteNonQuery();
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    passwordFound = reader.GetString(0);
+                }
+            }
+            return passwordFound;
+        }
 
     }
 }
