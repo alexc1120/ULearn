@@ -267,4 +267,4 @@ public static class DatabaseFunctions
         // all is ok
         return true;
     }
-}
+}    
