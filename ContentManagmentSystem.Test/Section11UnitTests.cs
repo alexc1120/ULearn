@@ -363,6 +363,184 @@ namespace ContentManagmentSystem.Test
             }
         }
         #endregion
+
+        #region Get Role By username
+
+        [TestMethod]
+        [ExpectedException(typeof(UserNotFoundException))]
+        public void GetRoleByUsernameTestCase_1()
+        {
+            UserManagement um = new UserManagement();
+            string username = generateString(201);
+            string role = null;
+            try
+            {
+                role = um.GetRoleByUsername(username) ;
+            }
+            finally
+            {
+                Assert.IsNull(role);
+            }
+        }
+        [TestMethod]
+        [ExpectedException(typeof(UserNotFoundException))]
+        public void GetRoleByUsernameTestCase_2()
+        {
+            UserManagement um = new UserManagement();
+            string username = String.Empty;
+            string role = null;
+            try
+            {
+                role = um.GetRoleByUsername(username);
+            }
+            finally
+            {
+                Assert.IsNull(role);
+            }
+        }
+        [TestMethod]
+        [ExpectedException(typeof(UserNotFoundException))]
+        public void GetRoleByUsernameTestCase_3()
+        {
+            UserManagement um = new UserManagement();
+            string username = "ssimmons001";
+            string role = null;
+            try
+            {
+                role = um.GetRoleByUsername(username);
+            }
+            finally
+            {
+                Assert.IsNull(role);
+            }
+        }
+        [TestMethod]
+        public void GetRoleByUsernameTestCase_4()
+        {
+            UserManagement um = new UserManagement();
+            string username = "ssimmons0";
+            string role = null;
+            try
+            {
+                role = um.GetRoleByUsername(username);
+            }
+            finally
+            {
+                Assert.IsTrue(!String.IsNullOrEmpty(role));
+            }
+        }
+        #endregion
+
+        #region Update Password 
+        [TestMethod]
+        [ExpectedException(typeof(UserNotFoundException))]
+        public void UpdatePasswordTestCase_1()
+        {
+            UserManagement um = new UserManagement();
+            string username = generateString(201);
+            string password = generateString(100);
+            um.UpdateUserPassword(username,  password);
+        }
+        [TestMethod]
+        [ExpectedException(typeof(UserNotFoundException))]
+        public void UpdatePasswordTestCase_2()
+        {
+            UserManagement um = new UserManagement();
+            string username = String.Empty;
+            string password = generateString(100);
+            um.UpdateUserPassword(username, password);
+        }
+        [TestMethod]
+        [ExpectedException(typeof(UserNotFoundException))]
+        public void UpdatePasswordTestCase_3()
+        {
+            UserManagement um = new UserManagement();
+            string username = "simmons0";
+            string password = generateString(100);
+            um.UpdateUserPassword(username, password);
+        }
+        [TestMethod]
+        public void UpdatePasswordTestCase_4()
+        {
+            UserManagement um = new UserManagement();
+            string username1 = "ssimmons0";
+            string username2 = "bgonzalez1";
+            string username3 = "ldean2";
+
+            string password = generateString(6);
+            um.UpdateUserPassword(username1, password);
+
+            string password1 = SQLManager.GetPasswordByUser(username1);
+
+            password = generateString(100);
+            um.UpdateUserPassword(username2, password);
+
+            string password2 = SQLManager.GetPasswordByUser(username2);
+
+
+            password = generateString(255);
+            um.UpdateUserPassword(username3, password);
+
+            string password3 = SQLManager.GetPasswordByUser(username3);
+
+            Assert.IsTrue(password1.Equals(generateString(6)));
+            Assert.IsTrue(password2.Equals(generateString(100)));
+            Assert.IsTrue(password3.Equals(generateString(255)));
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void UpdatePasswordTestCase_5()
+        {
+            UserManagement um = new UserManagement();
+            string username = "ssimmons0";
+            string password = String.Empty;
+            try
+            {
+                um.UpdateUserPassword(username, password);
+            }
+            finally {
+                var updatedPass = SQLManager.GetPasswordByUser(username);
+
+                Assert.AreNotEqual(updatedPass, string.Empty);
+            }
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(SqlException))]
+        public void UpdatePasswordTestCase_6()
+        {
+            UserManagement um = new UserManagement();
+            string username = "ssimmons0";
+            string password = generateString(256);
+            try
+            {
+                um.UpdateUserPassword(username, password);
+            }
+            finally
+            {
+                var updatedPass = SQLManager.GetPasswordByUser(username);
+                Assert.AreNotEqual(updatedPass, string.Empty);
+            }
+        }
+        [TestMethod]
+        [ExpectedException(typeof(NullReferenceException))]
+        public void UpdatePasswordTestCase_7()
+        {
+            UserManagement um = new UserManagement();
+            string username = "ssimmons0";
+            string password = null;
+            try
+            {
+                um.UpdateUserPassword(username, password);
+            }
+            finally
+            {
+                var updatedPass = SQLManager.GetPasswordByUser(username);
+                Assert.AreNotEqual(updatedPass, string.Empty);
+            }
+        }
+        #endregion
         [TestCleanup]
         public void Finalise()
         {
