@@ -11,15 +11,15 @@ namespace ContentManagmentSystem
         
         public static void ResetDatabase()
         {
-            FileInfo file = new FileInfo("../../Scripts/Users.sql");
+            FileInfo file = new FileInfo("../../Scripts/DbScripts.sql");
             string script = file.OpenText().ReadToEnd();
-            string resetIdScript = "DBCC CHECKIDENT('Users', RESEED, 0); ";
+            string resetIdScript = "DBCC CHECKIDENT('Users', RESEED, 0);DBCC CHECKIDENT('Roles', RESEED, 0); ";
 
             SqlConnection cnn = new SqlConnection(connectionString);
             SqlCommand cmd = new SqlCommand();    
             cmd.Connection = cnn;
             cmd.CommandTimeout = 1000;
-            cmd.CommandText = "DELETE From Users;"+ resetIdScript + script;
+            cmd.CommandText = "DELETE From Users;DELETE FROM Roles;"+ resetIdScript + script;
             cnn.Open();
             cmd.ExecuteNonQuery();
             cnn.Close();

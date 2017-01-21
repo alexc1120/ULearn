@@ -60,12 +60,13 @@ namespace ContentManagmentSystem.Test
             newRow["Password"] = "123456";
             newRow["UserRole"] = 2;
 
-            var user = um.AddNewUser("nikola", "nik@a.a", "123456", "Material Developer");
+            var user = um.AddNewUser("nikola", "nik@a.a", "123456", "MaterialDeveloper");
             newRow["Id"] = user;
             dtOriginal.Rows.Add(newRow);
 
             DataTable dtActual = new DataTable();
             adapter.Fill(dtActual);
+
             Assert.IsTrue(dtOriginal.IsEqual(dtActual));
         }
         [TestMethod]

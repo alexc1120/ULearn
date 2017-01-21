@@ -1,3 +1,6 @@
+insert into Roles (role) values ('Learner');
+insert into Roles (role) values ('MaterialDeveloper');
+
 insert into Users (Username, Password, Email, UserRole) values ('ssimmons0', 'MtqOJc', 'wjacobs0@nhs.uk', 1);
 insert into Users (Username, Password, Email, UserRole) values ('bgonzalez1', '7j2NVwcyl', 'sgeorge1@scribd.com', 1);
 insert into Users (Username, Password, Email, UserRole) values ('ldean2', 'ysd1KR5ZuJih', 'dpeterson2@unc.edu', 1);
