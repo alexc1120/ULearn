@@ -13,5 +13,10 @@ namespace ContentManagmentSystem.Models
         {
             throw new NotImplementedException();
         }
+
+        public IContent GetISeasonalContent()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

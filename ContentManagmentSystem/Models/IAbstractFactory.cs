@@ -4,5 +4,6 @@
     {
         IContent GetIContent();
         IContent GetIAJAXContent();
+        ISeasonalContent GetISeasonalContent();
     }
 }

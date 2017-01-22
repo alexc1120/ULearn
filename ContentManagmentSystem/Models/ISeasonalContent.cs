@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace ContentManagmentSystem.Models
 {
-    public interface ISeasonalContent: IContent
-    {
 
+    public interface ISeasonalContent
+    {
+        void DetermineContentToDisplay(DateTime dateTime);
     }
 }
